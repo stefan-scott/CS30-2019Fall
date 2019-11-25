@@ -10,11 +10,13 @@ void draw(){
   float a = map(mouseX, 0, width, 0, 90); 
   offset = map(mouseY, 0, height, 0, 60);
   
-  pushMatrix();
-  translate(width/2,height/2);
-  rotate(radians(30));
-  drawRectangle(0,0, a, 50);
-  popMatrix();
+  for(int i = 0; i < 360; i+=45){
+    pushMatrix();
+    translate(width/2,height/2);
+    rotate(radians(i));
+    drawRectangle(0,0, a, 50);
+    popMatrix();
+  }
   
 }
 
