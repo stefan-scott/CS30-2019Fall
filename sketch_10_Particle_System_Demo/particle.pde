@@ -19,6 +19,7 @@ class Particle {
     pushMatrix();
     translate(position.x, position.y);
     fill(c);
+    float currentSize = map(lifetime, 125 , 0, 
     ellipse(0, 0, size, size);
     popMatrix();
   }
@@ -26,6 +27,12 @@ class Particle {
   void move(){
     position.add(velocity);
     velocity.add(acceleration);
+    lifetime --;
+  }
+  
+  Boolean isAlive(){
+    if (lifetime > 0) return true;
+    else return false;
   }
   
   
